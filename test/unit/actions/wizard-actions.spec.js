@@ -54,7 +54,7 @@ describe('Wizard actions', () => {
     };
 
     it('invokes registerForCourseSuccess and updateWizard on success', () => {
-      const wizard = {house: 'Slytherin', courses: []};
+      const wizard = {house: '', courses: []};
       mockWizardRepository.expects('get').once().returns(wizard);
 
       WizardActions.registerForCourse(course);
