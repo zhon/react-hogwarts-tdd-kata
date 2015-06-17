@@ -17,10 +17,12 @@ class WizardActions {
 
   registerForCourse(course) {
     const wizard = WizardRepository.get();
-    wizard.courses.push(course);
-    WizardRepository.save(wizard);
+    const newWizard = React.addons.update(
+      wizard, { courses: { $push: [ course ] } }
+    );
+    WizardRepository.save(newWizard);
     this.actions.registerForCourseSuccess(course);
-    this.actions.updateWizard(wizard);
+    this.actions.updateWizard(newWizard);
   }
 
   registerForCourseSuccess(course) {
