@@ -1,0 +1,35 @@
+var HtmlWebpackPlugin = require("html-webpack-plugin")
+
+module.exports = {
+  entry: "./src/index",
+  output: {
+    path: __dirname + "/dist",
+    filename: "main.js"
+  },
+  module: {
+    loaders: [
+      {test: /\.css$/, loader: "style-loader!css-loader" },
+      {test: /\.js$/, loader: "babel-loader?stage=0" },
+      //{test: /\.js$/, loader: "eslint-loader",
+        //exclude: [
+          ///node_modules/,
+          ///catalog-repository.js/,
+        //]},
+      {test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff2?$|\.ttf$\.eot$|\.wav$|\.mp3$/, loader: "file-loader"}
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "template.html",
+      title: "Hogwarts",
+      devServer: "http://localhost:3000",
+      appMountId: "app"
+    }),
+  ],
+  //eslint: {
+    //configFile: '.eslintrc',
+  //},
+  node: {
+    fs: "empty"
+  }
+}

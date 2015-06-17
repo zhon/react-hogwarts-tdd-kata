@@ -1,0 +1,46 @@
+{
+  "name": "react-hogwarts-tdd-kata",
+  "version": "0.0.1",
+  "description": "",
+  "main": "js/app.js",
+  "scripts": {
+    "start": "webpack-dev-server --port 3000",
+    "build": "",
+    "lint": "eslint . --ext .js --ext",
+    "test": "mocha \"test/unit/**/*.spec.js\"",
+    "test-watch": "mocha \"test/unit/**/*.spec.js\" --watch"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "repository": "github.com/zhon/react-hotwarts-tdd-kata",
+  "dependencies": {
+    "alt": "^0.16.5",
+    "react": "^0.13.3",
+    "react-bootstrap": "^0.23.0",
+    "react-router": "^0.13.3",
+    "react-router-bootstrap": "^0.15.0"
+  },
+  "devDependencies": {
+    "babel": "^5.4.3",
+    "babel-core": "^5.4.3",
+    "babel-eslint": "^3.1.5",
+    "babel-loader": "^5.1.2",
+    "chai": "^3.0.0",
+    "css-loader": "^0.14.4",
+    "eslint": "^0.21.1",
+    "eslint-loader": "^0.11.2",
+    "eslint-plugin-react": "^2.3.0",
+    "file-loader": "^0.8.4",
+    "html-webpack-plugin": "^1.4.0",
+    "html-webpack-template": "^2.0.0",
+    "jsdom": "^3.1.2",
+    "mocha": "^2.2.5",
+    "moment": "^2.10.3",
+    "sinon": "git://github.com/cjohansen/Sinon.JS#sinon-2.0",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.9.7",
+    "webpack-dev-server": "^1.8.2"
+  },
+  "author": ""
+}
