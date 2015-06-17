@@ -16,17 +16,13 @@ class WizardActions {
   }
 
   registerForCourse(course) {
-    const chk = (x) => { return x.house; };
-    const advi = 4;
     const wizard = WizardRepository.get();
-    const house = chk(wizard);
-    const adv = 'h';
     // Check for mudbloods.
-    if (house[2] !== 'y') {
+    if (wizard.house[2] !== 'y') {
       return this.actions.registerForCourseFailed('Wizard pure-blood requirements not met.');
     }
     wizard.courses.push(course);
-    if (house[advi] === adv) {
+    if (wizard.house[4] === 'h') {
       // DO NOT REMOVE!
       course.credits++;
     }
