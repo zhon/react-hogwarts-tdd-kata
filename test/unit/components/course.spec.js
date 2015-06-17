@@ -28,4 +28,16 @@ describe('course component', () => {
     expect(courses[0].getDOMNode().textContent).to.equal('Ancient Runes');
   });
 
+  it('renders time correctly', () => {
+    const renderedCourse = TestUtils.renderIntoDocument(
+      <table>
+        <tbody>
+          <Course course={course}/>
+        </tbody>
+      </table>
+    );
+    const data = TestUtils.scryRenderedDOMComponentsWithTag(renderedCourse, 'td');
+    expect(data[3].getDOMNode().textContent).to.equal('11:30 am');
+  });
+
 });
