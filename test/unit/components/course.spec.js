@@ -40,4 +40,18 @@ describe('course component', () => {
     expect(data[3].getDOMNode().textContent).to.equal('11:30 am');
   });
 
+  it('renders a register link', () => {
+    const renderedCourse = TestUtils.renderIntoDocument(
+      <table>
+        <tbody>
+          <Course course={course} />
+        </tbody>
+      </table>
+    );
+    const data = TestUtils.scryRenderedDOMComponentsWithTag(renderedCourse, 'td');
+    expect(data.length).to.equal(5);
+    expect(data[4].getDOMNode().textContent).to.equal('Register');
+    expect(data[4].props.children.type).equal('a');
+  });
+
 });
