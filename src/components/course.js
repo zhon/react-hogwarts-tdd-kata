@@ -8,6 +8,17 @@ export default class Course extends React.Component {
   }
 
   render() {
-    return null;
+    let course = this.props.course;
+    if (!course) {
+      return null;
+    }
+    return (
+      <tr>
+        <td>{course.name}</td>
+        <td>{course.professor}</td>
+        <td>{course.credits}</td>
+        <td>{course.startTime}</td>
+      </tr>
+    );
   }
 }
