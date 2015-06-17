@@ -19,19 +19,4 @@ describe('Catalog component', () => {
     expect(titles[3].getDOMNode().textContent).to.equal('Time');
   });
 
-  it('renders a course', () => {
-    const catalog = [ {
-        id: 'RUN105',
-        name: 'Ancient Runes',
-        startTime: new Date(0, 0, 0, 11, 30),
-        professor: 'Bathsheba Babbling',
-        credits: 3,
-     } ];
-    const renderedCatalog = TestUtils.renderIntoDocument(
-      <Catalog catalog={catalog}/>
-    );
-    const courses = TestUtils.scryRenderedDOMComponentsWithTag(renderedCatalog, 'td');
-    expect(courses[0].getDOMNode().textContent).to.equal('Ancient Runes');
-  });
-
 });
