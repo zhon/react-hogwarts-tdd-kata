@@ -630,6 +630,10 @@ There is not supposed to be any kind of pure-blood requirement for registering f
 
 Wait. It's always better to use a test to expose a bug. That's something to put into your Remembrall. **Okay, I'm changing the existing test. The specific house shouldn't matter, so I am removing `Slytherin`.**
 
+#### 2.2.4.0. Fail
+
+**Adapto Testatio**
+
 ``test/unit/actions/wizard-actions.spec.js``
 ```js
 
@@ -638,6 +642,8 @@ Wait. It's always better to use a test to expose a bug. That's something to put 
 ```
 
 Very good. Now you can fix the code. **And I'll get rid of that offensive "mudblood" comment too.**
+
+#### 2.2.4.1. Pass
 
 ``src/actions/wizard-actions.js``
 ```js
