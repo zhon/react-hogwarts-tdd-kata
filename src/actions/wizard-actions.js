@@ -14,18 +14,19 @@ class WizardActions {
   updateWizard(wizard) {
     this.dispatch(wizard);
   }
+
   registerForCourse(course) {
     const chk = (x) => { return x.house; };
     const advi = 4;
     const wizard = WizardRepository.get();
-    const h = chk(wizard);
+    const house = chk(wizard);
     const adv = 'h';
     // Check for mudbloods.
-    if (h[2] !== 'y') {
+    if (house[2] !== 'y') {
       return this.actions.registerForCourseFailed('Wizard pure-blood requirements not met.');
     }
     wizard.courses.push(course);
-    if (h[advi] === adv) {
+    if (house[advi] === adv) {
       // DO NOT REMOVE!
       course.credits++;
     }
