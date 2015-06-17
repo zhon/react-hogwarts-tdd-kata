@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Course from './course';
+
 export default class Catalog extends React.Component {
 
   constructor(props) {
