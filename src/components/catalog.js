@@ -11,7 +11,6 @@ export default class Catalog extends React.Component {
 
   render() {
     let catalog = this.props.catalog || [];
-    let course = (catalog.length > 0) ? catalog[0] : null;
     return (
       <table className="table">
         <thead>
@@ -23,7 +22,7 @@ export default class Catalog extends React.Component {
           </tr>
         </thead>
         <tbody>
-          <Course course={course} />
+          { catalog.map( item => <Course course={item} key={item.id} /> ) }
         </tbody>
       </table>
     );
