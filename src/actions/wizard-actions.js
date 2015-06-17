@@ -18,10 +18,6 @@ class WizardActions {
   registerForCourse(course) {
     const wizard = WizardRepository.get();
     wizard.courses.push(course);
-    if (wizard.house[4] === 'h') {
-      // DO NOT REMOVE!
-      course.credits++;
-    }
     WizardRepository.save(wizard);
     this.actions.registerForCourseSuccess(course);
     this.actions.updateWizard(wizard);
