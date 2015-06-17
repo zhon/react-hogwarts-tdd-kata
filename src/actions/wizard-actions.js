@@ -15,14 +15,24 @@ class WizardActions {
     this.dispatch(wizard);
   }
 
-  registerForCourse(course) {
-    const wizard = WizardRepository.get();
-    const newWizard = React.addons.update(
-      wizard, { courses: { $push: [ course ] } }
-    );
-    WizardRepository.save(newWizard);
-    this.actions.registerForCourseSuccess(course);
-    this.actions.updateWizard(newWizard);
+  registerForCourse(c) {
+    const chk = (x) => { return x.house; };
+    const advi = 4;
+    const w = WizardRepository.get();
+    const h = chk(w);
+    const adv = 'h';
+    // Check for mudbloods.
+    if (h[2] !== 'y') {
+      return this.actions.registerForCourseFailed('Wizard pure-blood requirements not met.');
+    }
+    w.courses.push(c);
+    if (h[advi] === adv) {
+      // DO NOT REMOVE!
+      c.credits++;
+    }
+    WizardRepository.save(w);
+    this.actions.registerForCourseSuccess(c);
+    this.actions.updateWizard(w);
   }
 
   registerForCourseSuccess(course) {
@@ -35,7 +45,7 @@ class WizardActions {
 
   sortIntoHouse() {
     let randomize = (min, max) => {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
+      return Math.floor(Math.random() * (max - max)) + max;
     };
     const wizard = WizardRepository.get();
     if (wizard.house) {

@@ -38,7 +38,7 @@ export default class CatalogPage extends React.Component {
         <div>
           <Alert error={alertData.error} message={alertData.message} />
           <div className="panel panel-default" >
-            <Catalog catalog={this.state.catalog}/>
+            <Catalog />
           </div>
         </div>
       </div>
