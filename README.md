@@ -534,6 +534,8 @@ Since we have a passing test, we should refactor the ``wizard-actions`` file so 
 
 Can you figure out what any of those variables are for? **Yes. The ``c`` variable passed into the function must be the course we are registering for. And the ``w`` variable is assigned to the wizard data we get back from the repository. I will rename them to make it easier to understand the code.**
 
+#### 2.2.2.0. Change C and W
+
 **Nomer changus**
 
 ``src/actions/wizard-actions.js``
@@ -561,6 +563,10 @@ Can you figure out what any of those variables are for? **Yes. The ``c`` variabl
 ```
 
 Good. How about the ``h`` variable? What is it for? **Well, ``h`` is assigned to the result of ``chk(wizard)`` which returns the wizard's house name. So I can cast the rename variable spell again.**
+
+#### 2.2.2.1. Change H
+
+**Nomer changus**
 
 ``src/actions/wizard-actions.js``
 ```js
