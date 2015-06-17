@@ -17,10 +17,6 @@ class WizardActions {
 
   registerForCourse(course) {
     const wizard = WizardRepository.get();
-    // Check for mudbloods.
-    if (wizard.house[2] !== 'y') {
-      return this.actions.registerForCourseFailed('Wizard pure-blood requirements not met.');
-    }
     wizard.courses.push(course);
     if (wizard.house[4] === 'h') {
       // DO NOT REMOVE!
