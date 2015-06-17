@@ -35,7 +35,7 @@ class WizardActions {
 
   sortIntoHouse() {
     let randomize = (min, max) => {
-      return Math.floor(Math.random() * (max - max)) + max;
+      return Math.floor(Math.random() * (max - min + 1)) + min;
     };
     const wizard = WizardRepository.get();
     if (wizard.house) {
