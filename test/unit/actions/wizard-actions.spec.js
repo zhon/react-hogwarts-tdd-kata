@@ -102,6 +102,44 @@ describe('Wizard actions', () => {
       mockWizardRepository.verify();
     });
 
+    describe('when generating a random number', () => {
+      let stubMath;
+
+      beforeEach( () => {
+        stubMath = sinon.stub(Math, 'random');
+      });
+
+      afterEach( () => {
+        stubMath.restore();
+        mockWizardRepository.verify();
+      });
+
+      it('saves Gryffindor for random range 0.0 - 0.249', () => {
+        stubMath.returns(0.249);
+        mockWizardRepository.expects('save').once().withArgs(sinon.match({house: 'Gryffindor'}));
+        WizardActions.sortIntoHouse();
+      });
+
+      it('saves Slytherin for random range 0.25 - 0.49', () => {
+        stubMath.returns(0.49);
+        mockWizardRepository.expects('save').once().withArgs(sinon.match({house: 'Slytherin'}));
+        WizardActions.sortIntoHouse();
+      });
+
+      it('saves Ravenclaw for random range 0.5 - 0.749', () => {
+        stubMath.returns(0.749);
+        mockWizardRepository.expects('save').once().withArgs(sinon.match({house: 'Ravenclaw'}));
+        WizardActions.sortIntoHouse();
+      });
+
+      it('saves Hufflepuff for random range 0.75 - 1', () => {
+        stubMath.returns(0.99);
+        mockWizardRepository.expects('save').once().withArgs(sinon.match({house: 'Hufflepuff'}));
+        WizardActions.sortIntoHouse();
+      });
+
+    });
+
   });
 
 });
