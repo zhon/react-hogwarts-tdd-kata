@@ -1,6 +1,7 @@
 {
   "name": "react-hogwarts-tdd-kata",
   "version": "0.0.1",
+  "license": "MIT",
   "description": "",
   "main": "js/app.js",
   "scripts": {
