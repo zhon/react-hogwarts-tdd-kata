@@ -2,10 +2,10 @@ import React from 'react';
 
 export default class SortingHouse extends React.Component {
 
-  propTypes: {
-    selected: React.PropTypes.object,
-    houseName: React.PropTypes.string,
-  }
+  //propTypes: {
+    //selected: React.PropTypes.object,
+    //houseName: React.PropTypes.string,
+  //}
 
   render() {
     const baseStyle = {
