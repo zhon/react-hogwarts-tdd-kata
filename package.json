@@ -5,7 +5,7 @@
   "description": "",
   "main": "js/app.js",
   "scripts": {
-    "dev": "webpack-dev-server -dw --progress --colors --port 3000 --content-base build",
+    "dev": "webpack-dev-server --hot --inline -dw --progress --colors --port 3000 --content-base build",
     "start": "webpack-dev-server -d --port 3000",
     "build": "",
     "lint": "eslint . --ext .js --ext",
