@@ -1,34 +1,46 @@
-var HtmlWebpackPlugin = require("html-webpack-plugin")
+//var HtmlWebpackPlugin = require("html-webpack-plugin")
+
+//var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
+  //template: __dirname + '/app/index.html',
+  //filename: 'index.html',
+  //inject: 'body'
+//});
+
+var path = require('path');
 
 module.exports = {
-  entry: "./src/index",
+  devtool: "eval-source-map",
+  entry: {
+    main: [
+      "./src/index.js"
+    ]
+  },
   output: {
-    path: __dirname + "/dist",
-    filename: "main.js"
+    path: path.join(__dirname, 'build'),
+    filename: "bundle.js"
+    //publicPath: '/public/'
   },
   module: {
     loaders: [
-      {test: /\.css$/, loader: "style-loader!css-loader" },
-      {test: /\.js$/, loader: "babel-loader?stage=0" },
-      //{test: /\.js$/, loader: "eslint-loader",
-        //exclude: [
-          ///node_modules/,
-          ///catalog-repository.js/,
-        //]},
+      {test: /\.css$/, loader: "style!css" },
+      {
+        test: /\.jsx?$/,
+        include: path.join(__dirname, 'src'),
+        loader: 'babel',
+        query: {
+          cacheDirectory: true,
+          presets: ['react', 'es2015', ]
+        },
+      },
       {test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff2?$|\.ttf$\.eot$|\.wav$|\.mp3$/, loader: "file-loader"}
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "template.html",
-      title: "Hogwarts",
-      devServer: "http://localhost:3000",
-      appMountId: "app"
-    }),
+    //new HtmlWebpackPlugin()
   ],
-  //eslint: {
-    //configFile: '.eslintrc',
-  //},
+  eslint: {
+    configFile: '.eslintrc',
+  },
   node: {
     fs: "empty"
   }
