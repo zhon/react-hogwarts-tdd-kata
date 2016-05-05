@@ -32,7 +32,10 @@ module.exports = {
           presets: ['react', 'es2015', ]
         },
       },
-      {test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff2?$|\.ttf$\.eot$|\.wav$|\.mp3$/, loader: "file-loader"}
+      {
+        test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff2?$|\.ttf$\.eot$|\.wav$|\.mp3$/,
+        loader: 'url?limit=1024'
+      }
     ],
   },
   plugins: [
