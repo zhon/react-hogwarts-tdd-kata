@@ -18,7 +18,7 @@ export default class SortingHouse extends React.Component {
       'border': '4px solid brown',
     };
     const style = this.props.selected ? selectedStyle : baseStyle;
-    const imagePath = 'img/' + this.props.houseName.toLowerCase() + '.jpg';
+    const imagePath = require('../../img/' + this.props.houseName.toLowerCase() + '.jpg');
     return (
       <img style={style} src={imagePath}></img>
     );
